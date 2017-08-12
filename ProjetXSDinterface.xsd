@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2015 rel. 3 sp1 (x64) (http://www.altova.com) by Lagnaoui (Lagnaoui) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="PFE">
+		<xs:annotation>
+			<xs:documentation>Comment describing your root element</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="projet" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Etudiant" maxOccurs="3">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Nom" type="xs:string"/>
+										<xs:element name="Prénom" type="xs:string"/>
+										<xs:element name="Mail" type="xs:string" maxOccurs="2"/>
+										<xs:element name="Téléphone" type="xs:string" maxOccurs="2"/>
+										<xs:element name="option" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="stage">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Intitulé" type="xs:string"/>
+										<xs:element name="DateDébut" type="xs:string"/>
+										<xs:element name="DateFin" type="xs:string"/>
+										<xs:element name="Organisme">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="NomOrganisme" type="xs:string"/>
+													<xs:element name="Contacts">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="Telephone" type="xs:string" maxOccurs="2"/>
+																<xs:element name="Mail" type="xs:string" maxOccurs="2"/>
+																<xs:element name="Adresse" type="xs:string"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="Parrain">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="NomParrain" type="xs:string"/>
+																<xs:element name="PrénomParrain" type="xs:string"/>
+																<xs:element name="Fonction" type="xs:string"/>
+																<xs:element name="Téléphone" type="xs:string" maxOccurs="2"/>
+																<xs:element name="Mail" type="xs:string" maxOccurs="2"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="soutenance">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Date" type="xs:string"/>
+										<xs:element name="Local" type="xs:string"/>
+										<xs:element name="Jury" maxOccurs="4">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Encadrants" type="xs:string" maxOccurs="3"/>
+													<xs:element name="représentantsEntreprise" type="xs:string" maxOccurs="2"/>
+													<xs:element name="Examinateur" type="xs:string" maxOccurs="2"/>
+													<xs:element name="présidentJury" type="xs:string"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Encadrants" maxOccurs="3">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="EncadrantInterne" maxOccurs="3">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Nom" type="xs:string"/>
+													<xs:element name="Prénom" type="xs:string"/>
+													<xs:element name="Fonction" type="xs:string"/>
+													<xs:element name="Téléphone" type="xs:string" maxOccurs="2"/>
+													<xs:element name="Mail" type="xs:string"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="EncadrantExterne" maxOccurs="2">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Nom" type="xs:string"/>
+													<xs:element name="Prénom" type="xs:string"/>
+													<xs:element name="Fonction" type="xs:string"/>
+													<xs:element name="Téléphone" type="xs:string" maxOccurs="2"/>
+													<xs:element name="Mail" type="xs:string"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="ID" type="xs:string"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
